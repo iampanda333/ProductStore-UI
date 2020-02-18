@@ -1,0 +1,15 @@
+<div class="toolbar">
+  <h1>MyStore</h1>
+  <div class="editUser">
+    <button type="button" style="margin:0px 10px;" class="btn btn-success btn-sm" *ngIf="_login.loggedIn && _login.isAdmin"
+      [routerLink]="['/users']">Manage Users</button>
+    <button type="button" style="margin:0px 10px;" class="btn btn-success btn-sm" *ngIf="!_login.loggedIn"
+      [routerLink]="['/signup']">Sign Up</button>
+      <button type="button" style="margin:0px 10px;" class="btn btn-success btn-sm" *ngIf="!_login.loggedIn"
+      [routerLink]="['/login']">Log In</button>
+    <span [routerLink]="['/login']" *ngIf="_login.loggedIn" (click)="logout()">Logout</span>
+  </div>
+</div>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

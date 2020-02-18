@@ -1,0 +1,9 @@
+<div class="">
+    <div *ngFor="let users of userList" class="users">
+        {{users.username}}
+        <span (click)="deleteUser(users._id)" style="cursor:pointer; float: right; color:red">X</span>
+    </div>
+
+</div>
+
+<hr>
